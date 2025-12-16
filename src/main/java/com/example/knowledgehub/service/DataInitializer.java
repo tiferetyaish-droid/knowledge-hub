@@ -37,6 +37,14 @@ public class DataInitializer implements CommandLineRunner {
         manualDoc.setUploader("מערכת");
         documentService.upload(manualDoc);
 
+        Document reportDoc = new Document();
+        reportDoc.setId(3L);
+        reportDoc.setName("דוח מכירות רבעון 3");
+        reportDoc.setType("REPORT");
+        reportDoc.setContent("המכירות עלו ב-15% בהשוואה לרבעון הקודם. חלה עלייה משמעותית בביקוש למוצרי ענן.");
+        reportDoc.setUploader("מערכת");
+        documentService.upload(reportDoc);
+
 
         System.out.println("-------------------------------------------");
         System.out.println(">> נתוני דוגמה נטענו בהצלחה למערכת! <<");
