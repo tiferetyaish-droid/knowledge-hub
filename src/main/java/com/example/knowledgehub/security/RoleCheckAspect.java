@@ -15,7 +15,7 @@ public class RoleCheckAspect {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
 
-        String userRole = request.getParameter("role");
+        String userRole = request.getHeader("User-Role");
 
         if (userRole == null || !userRole.equalsIgnoreCase(requiresRole.value())) {
             throw new RuntimeException("Access Denied: You must be " + requiresRole.value());
